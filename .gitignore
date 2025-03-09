@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.json  (optional, if you don’t want to track generated JSON files)
