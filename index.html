@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Traffic Optimization Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Condensed:wght@300;700&family=Courgette&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: auto;
+        }
+        .upper-section {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: calc(100vh - 80px);
+        }
+        .content {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .summary h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .summary p {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 300;
+            font-size: 1.6rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .lower-section {
+            background-color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .locations-label {
+            font-family: 'Courgette', cursive;
+            font-size: 2rem;
+            color: #2e2e2e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .filter-select {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 1.2rem;
+            font-family: 'Courgette', cursive;
+            color: #2e2e2e;
+        }
+        .nav-links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .town-item {
+            position: relative;
+            width: 100%;
+            padding: 25px 0;
+            border-top: 2px solid #2e2e2e;
+        }
+        .town-item:last-child {
+            border-bottom: 2px solid #2e2e2e;
+        }
+        .town-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0 20px;
+        }
+        .town-header a {
+            color: #2e2e2e;
+            text-decoration: none;
+            font-family: 'Courgette', cursive;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-align: center;
+            width: 100%;
+        }
+        .town-header .arrow {
+            font-size: 1.5rem;
+            color: #2e2e2e;
+            transition: transform 0.3s;
+        }
+        .town-header .arrow.down {
+            transform: rotate(90deg);
+        }
+        .intersections {
+            display: none;
+            padding: 2px 20px;
+            background-color: #f8f8f8;
+            margin-top: 2px;
+        }
+        .intersections.show {
+            display: block;
+        }
+        .intersection-item {
+            margin-left: 20px;
+            font-family: 'Courgette', cursive;
+            color: #2e2e2e;
+            font-size: 1.3rem;
+        }
+        .xai-analysis {
+            margin-left: 20px;
+            font-family: 'Courgette', cursive;
+            color: #2e2e2e;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .upper-section {
+                min-height: calc(100vh - 60px);
+            }
+            .content {
+                margin: 0 10px;
+            }
+            .summary h1 {
+                font-size: 2.2rem;
+            }
+            .summary p {
+                font-size: 1.2rem;
+            }
+            .locations-label {
+                font-size: 1.5rem;
+            }
+            .town-header a {
+                font-size: 1.2rem;
+            }
+            .town-header .arrow {
+                font-size: 1.2rem;
+            }
+            .town-item {
+                padding: 20px 0;
+            }
+            .intersection-item {
+                font-size: 1.1rem;
+            }
+            .xai-analysis {
+                font-size: 1.0rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="upper-section">
+        <div class="content">
+            <div class="summary">
+                <h1>AI Traffic Optimization</h1>
+                <p>Real-time traffic analytics, showing insight on benefits from AI-controlled traffic lights delivering by minimizing delays and reducing costs at key intersections.</p>
+            </div>
+        </div>
+    </div>
+    <div class="lower-section">
+        <div class="locations-label">Locations</div>
+        <select class="filter-select" id="time-filter" onchange="updateData()">
+            {% for filter in filters %}
+                <option value="{{ filter }}">{{ filter.replace('_', ' ').title() }}</option>
+            {% endfor %}
+        </select>
+        <div class="nav-links" id="towns-container">
+            {% for town, data in towns.items() %}
+                <div class="town-item">
+                    <div class="town-header" onclick="toggleIntersections(this)">
+                        <a href="#">{{ town }}</a>
+                        <span class="arrow">▶</span>
+                    </div>
+                    <div class="intersections">
+                        {% for intersection in data.intersections %}
+                            <div class="intersection-item">{{ intersection }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

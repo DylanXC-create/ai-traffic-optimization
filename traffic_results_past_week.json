@@ -1,0 +1,432 @@
+{
+    "Amherst": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "Transit Road (NY-78) & Maple Road",
+                "delay_minutes": 0.55,
+                "total_vehicles": 6400,
+                "time_savings_usd": 233.56,
+                "fuel_savings_usd": 33.63
+            },
+            {
+                "name": "Sheridan Drive (NY-324) & Niagara Falls Boulevard (US-62)",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Main Street (NY-5) & Eggert Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Millersport Highway (NY-263) & Sheridan Drive",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Maple Road & North Forest Road",
+                "delay_minutes": 0.55,
+                "total_vehicles": 6400,
+                "time_savings_usd": 233.56,
+                "fuel_savings_usd": 33.63
+            }
+        ],
+        "total_time_savings": 467.1129600000001,
+        "total_fuel_savings": 67.26426624000001,
+        "xai_analysis": "### Analysis of Traffic Data for Congestion Trends\n\n**1. Overview:**\nFrom the provided data, out of five intersections monitored over the past week in Amherst, only two (Transit Road & Maple Road and Maple Road & North Forest Road) showed any delay, with each having a delay of 0.55 minutes per vehicle. This indicates that:\n\n- **Congestion is not widespread:** Only two intersections are experiencing delays, which suggests that congestion might be localized rather than a systemic issue across the town.\n\n**2. Detailed Observations:**\n\n- **Transit Road (NY-78) & Maple Road:**\n  - This intersection has a delay of 0.55 minutes per vehicle. Given the high number of vehicles (6400), even a small delay accumulates to significant time and fuel costs.\n  - Potential causes could include signal timing issues, high turn volumes, or insufficient capacity for the traffic flow.\n\n- **Sheridan Drive (NY-324) & Niagara Falls Boulevard (US-62), Main Street (NY-5) & Eggert Road, Millersport Highway (NY-263) & Sheridan Drive:**\n  - These intersections show zero delay, indicating either very efficient traffic management or lower traffic volumes. However, this also might suggest that these intersections might not be capturing peak traffic times or might be underreported.\n\n- **Maple Road & North Forest Road:**\n  - Similar to Transit Road & Maple Road, this intersection also experiences a"
+    },
+    "Buffalo": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "Delaware Avenue (NY-384) & Niagara Square",
+                "delay_minutes": 1.76,
+                "total_vehicles": 6400,
+                "time_savings_usd": 752.57,
+                "fuel_savings_usd": 108.37
+            },
+            {
+                "name": "Main Street (NY-5) & Bailey Avenue (US-62)",
+                "delay_minutes": 1.09,
+                "total_vehicles": 6400,
+                "time_savings_usd": 467.11,
+                "fuel_savings_usd": 67.26
+            },
+            {
+                "name": "Elmwood Avenue & Hertel Avenue",
+                "delay_minutes": 1.76,
+                "total_vehicles": 6400,
+                "time_savings_usd": 752.57,
+                "fuel_savings_usd": 108.37
+            },
+            {
+                "name": "Kensington Avenue (NY-33) & Harlem Road",
+                "delay_minutes": 1.76,
+                "total_vehicles": 6400,
+                "time_savings_usd": 752.57,
+                "fuel_savings_usd": 108.37
+            },
+            {
+                "name": "Jefferson Avenue & Best Street",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            }
+        ],
+        "total_time_savings": 2724.8256000000006,
+        "total_fuel_savings": 392.37488640000004,
+        "xai_analysis": "Here's an analysis of the traffic data provided for Buffalo, focusing on congestion trends and recommendations for traffic optimization:\n\n### Congestion Analysis:\n\n1. **High Congestion Intersections:**\n   - **Delaware Avenue & Niagara Square**\n   - **Elmwood Avenue & Hertel Avenue**\n   - **Kensington Avenue & Harlem Road**\n   - All these intersections show a delay of **1.76 minutes per vehicle**. This indicates significant congestion, likely due to high traffic volume, poor traffic light synchronization, or physical layout issues.\n\n2. **Moderate Congestion:**\n   - **Main Street & Bailey Avenue** - With a delay of 1.09 minutes per vehicle, this intersection experiences less congestion compared to the others but still significant.\n\n3. **No Congestion:**\n   - **Jefferson Avenue & Best Street** - This intersection shows no delay, suggesting that either traffic flow is very smooth or there is very little traffic here.\n\n### Potential Causes:\n- **Volume and Timing:** High vehicle counts at these intersections suggest that the timing of traffic lights might not be optimized for peak traffic periods.\n- **Intersection Layout:** Physical characteristics like number of lanes, turn lanes, or pedestrian crossings can exacerbate delays.\n- **Adjacent Traffic Flow:** Nearby construction, events, or other high traffic areas could funnel additional vehicles into these intersections.\n\n### Recommendations for Traffic Optimization:\n\n1. **Traffic Signal Optimization:**\n   **- Synchronize Traffic Lights:** Implement adaptive traffic signal control systems that adjust light"
+    },
+    "Cheektowaga": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "Walden Avenue & Union Road (NY-277)",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Genesee Street (NY-33) & Transit Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Harlem Road (NY-240) & Walden Avenue",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Union Road & George Urban Boulevard",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Dick Road & Genesee Street",
+                "delay_minutes": 1.89,
+                "total_vehicles": 6400,
+                "time_savings_usd": 804.47,
+                "fuel_savings_usd": 115.84
+            }
+        ],
+        "total_time_savings": 804.47232,
+        "total_fuel_savings": 115.84401408000001,
+        "xai_analysis": "### Analysis of Traffic Data for Cheektowaga:\n\n**1. Overview:**\n- The data indicates that four out of five intersections show no delay, suggesting either very efficient traffic management or possibly an issue with data collection or interpretation. \n- Only one intersection, Dick Road & Genesee Street, shows significant congestion with a delay of 1.89 minutes per vehicle.\n\n**2. Congestion Trends:**\n- **No Delay Intersections**: \n  - Walden Avenue & Union Road\n  - Genesee Street & Transit Road\n  - Harlem Road & Walden Avenue\n  - Union Road & George Urban Boulevard\n  - These intersections might be underutilized, or they could be managed effectively through traffic signals or natural flow.\n\n- **High Delay Intersection:**\n  - **Dick Road & Genesee Street**: This intersection stands out due to a considerable delay, which indicates:\n    - Possible under-capacity traffic light timings or insufficient lanes for the volume of traffic.\n    - Potentially a hotspot for congestion during peak times, leading to significant time and fuel savings if optimized.\n\n**3. Financial Impact:**\n- At Dick Road & Genesee Street, the savings from reducing delay by just one minute per vehicle would equate to approximately $804.47 in time savings and $115.84 in fuel savings over the week. This indicates a high potential for economic benefit from congestion reduction at this location.\n\n### Recommendations for Traffic Optimization:\n\n**For Dick Road & Genesee Street:**\n\n"
+    },
+    "Evans": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "US-20 (Southwestern Boulevard) & NY-5",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "NY-5 & Sturgeon Point Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "US-20 & Kennedy Avenue",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "NY-5 & Derby Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "US-20 & Bennett Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            }
+        ],
+        "total_time_savings": 0.0,
+        "total_fuel_savings": 0.0,
+        "xai_analysis": "Based on the traffic data provided for the intersections in Evans over the past week, here are some observations and recommendations for traffic optimization:\n\n### Observations:\n\n1. **Zero Delay at All Intersections**: Every intersection listed shows a delay of 0.0 minutes per vehicle, which implies:\n   - Either the traffic flow is very smooth with no congestion issues at these points, or\n   - The data might not accurately reflect real-time or peak hour traffic conditions, or there could be an issue with the data collection method.\n\n2. **Uniform Traffic Volume**: Each intersection handles the same number of vehicles (6400), which is unusual unless there's a specific reason like an event or a loop in the road network not shown in the data.\n\n3. **No Savings in Time or Fuel**: With no delays, there's also no potential for time or fuel savings, which is typically where optimization efforts focus.\n\n### Recommendations for Traffic Optimization:\n\n1. **Data Verification and Collection Improvement**:\n   - **Verify Data**: Ensure the data collection mechanisms are accurate. If the data is from sensors, check if they are functioning correctly. \n   - **Time Segmentation**: Collect data segmented by time to understand peak and off-peak hours, which can reveal hidden congestion issues.\n\n2. **Traffic Signal Timing Optimization**:\n   - Although there are no reported delays, consider implementing or reviewing adaptive traffic signal control systems that can adjust in real-time to traffic conditions. This can be proactive in preventing future congestion.\n\n3."
+    },
+    "Grand Island": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "Grand Island Boulevard (NY-324) & I-190 Ramps",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Staley Road & Grand Island Boulevard",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Baseline Road & Grand Island Boulevard",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Whitehaven Road & East River Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "I-190 & West River Parkway",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            }
+        ],
+        "total_time_savings": 0.0,
+        "total_fuel_savings": 0.0,
+        "xai_analysis": "Based on the traffic data provided for Grand Island over the past week, here's an analysis of congestion trends and recommendations for traffic optimization:\n\n### Analysis:\n\n1. **Zero Delay at All Intersections**: The data shows no delay at any of the intersections listed, which suggests either:\n   - **Accurate Data Issue**: There might be an issue with the data collection or representation if there's truly no delay at all intersections, especially during peak times.\n   - **High Efficiency**: The traffic system on Grand Island could be very well managed or have low traffic volumes relative to capacity.\n\n2. **Uniform Traffic Volume**: Each intersection reports exactly 6400 vehicles, which is unusual unless this is an average or a typographical error in reporting. Typically, traffic volumes would vary by location, time, and day.\n\n3. **Economic Impact**: The absence of delay translates to zero time and fuel savings, which could indicate either perfect traffic flow or a lack of potential for optimization.\n\n### Recommendations:\n\n1. **Data Verification**:\n   - **Ensure Accuracy**: Verify the data collection methods. If the zero delay is accurate, understand what conditions contribute to this efficiency.\n   - **Time-Specific Data**: Collect data at different times of the day, especially during rush hours, to see if there are any congestion patterns not captured in the weekly average.\n\n2. **Traffic Management Enhancements**:\n   - **Smart Traffic Lights**: Implement or optimize smart traffic light systems that can adjust timings dynamically based on real"
+    },
+    "Hamburg": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "US-62 (South Park Avenue) & McKinley Parkway",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "NY-5 & Camp Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "US-20 & NY-75 (Camp Road)",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "McKinley Parkway & Southwestern Boulevard (US-20)",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "NY-5 & Sowles Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            }
+        ],
+        "total_time_savings": 0.0,
+        "total_fuel_savings": 0.0,
+        "xai_analysis": "The traffic data provided for Hamburg over the past week shows no delays at any of the monitored intersections:\n\n### Analysis:\n\n1. **Zero Delay**: All intersections listed have a delay of 0.0 minutes per vehicle, which indicates:\n   - **Efficient Traffic Flow**: The traffic management systems at these intersections are functioning effectively or there is naturally low traffic volume.\n   - **Potential Underutilization**: If these are major intersections in a city, zero delay might also suggest that the data collection might not be capturing peak times or there could be other routes or times when congestion does occur.\n\n2. **Uniform Traffic Volume**: Each intersection reports exactly 6400 vehicles, which is highly unusual:\n   - **Data Accuracy**: This uniform number across all intersections suggests potential errors in data collection or reporting. Real-world traffic counts would typically vary between intersections.\n\n3. **Economic Impact**: \n   - **No Time or Fuel Savings**: Since there's no delay, there's no savings to report, which aligns with the data but does not provide insight into potential for savings if congestion were to occur.\n\n### Recommendations for Traffic Optimization:\n\n1. **Data Validation**:\n   - **Verify Data Accuracy**: Ensure that traffic counters, sensors, or data collection methods are functioning correctly. This uniform data could indicate a system error or miscalibration.\n\n2. **In-Depth Traffic Study**:\n   - **Conduct Time-Specific Studies**: Analyze traffic at different times of the day, especially during rush hours"
+    },
+    "Lancaster": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "Transit Road (NY-78) & Walden Avenue",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Broadway (US-20) & Bowen Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Transit Road & Genesee Street",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Aurora Street & Pavement Road",
+                "delay_minutes": 0.24,
+                "total_vehicles": 6400,
+                "time_savings_usd": 103.8,
+                "fuel_savings_usd": 14.95
+            },
+            {
+                "name": "Walden Avenue & Central Avenue",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            }
+        ],
+        "total_time_savings": 103.80288000000002,
+        "total_fuel_savings": 14.947614720000004,
+        "xai_analysis": "Here's an analysis of the traffic data provided for Lancaster, along with recommendations for optimizing traffic flow:\n\n### Traffic Congestion Analysis:\n\n1. **General Observation**: \n   - Most intersections show no delay (0.0 min/vehicle), which suggests either very efficient traffic management or possibly under-reporting of real traffic conditions. However, it's worth considering if this data accurately reflects real-world conditions or if there might be a data collection issue.\n\n2. **Notable Intersection**: \n   - **Aurora Street & Pavement Road**: This intersection is the only one with recorded delays (0.24 min/vehicle). Although the delay seems minor, it's significant enough to quantify in terms of time and fuel savings, indicating a potential bottleneck or suboptimal traffic light timings.\n\n### Recommendations for Traffic Optimization:\n\n#### **At Aurora Street & Pavement Road:**\n\n- **Adjust Traffic Signal Timings**: \n  - Analyze the timing of traffic lights at this intersection to reduce delay. Consider implementing an adaptive traffic signal system that can adjust light timings based on real-time traffic flow.\n\n- **Peak Hour Analysis**: \n  - Perform a detailed analysis during peak hours to understand if the delay is consistent or if it's peak-specific, which would guide more targeted interventions.\n\n- **Turn Lanes and Phasing**: \n  - If not already in place, adding dedicated left-turn or right-turn lanes could reduce intersection delay. Also, review the phasing of signals to ensure that there's no unnecessary waiting time"
+    },
+    "Orchard Park": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "US-20A & NY-240 (Orchard Park Road)",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "US-219 & Milestrip Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "NY-277 & Southwestern Boulevard (US-20)",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "Big Tree Road (NY-20A) & California Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            },
+            {
+                "name": "US-20 & Powers Road",
+                "delay_minutes": 0.0,
+                "total_vehicles": 6400,
+                "time_savings_usd": 0.0,
+                "fuel_savings_usd": 0.0
+            }
+        ],
+        "total_time_savings": 0.0,
+        "total_fuel_savings": 0.0,
+        "xai_analysis": "Based on the traffic data provided for Orchard Park over the past week, here are some insights and recommendations for traffic optimization:\n\n### Analysis of Traffic Data:\n\n1. **Uniform Traffic Flow**: All intersections listed show zero delay per vehicle, indicating very efficient traffic management or perhaps underreported congestion. This could mean:\n   - **Accurate Reporting**: The data accurately reflects smooth traffic flow.\n   - **Data Inaccuracy**: There might be an issue with how traffic is being monitored or reported, especially if these are busy intersections.\n\n2. **Vehicle Volume**: Each intersection has the same number of vehicles (6400), which is unusual unless these figures are rounded or represent an average daily traffic (ADT) flow rather than real-time data.\n\n3. **No Time or Fuel Savings**: Since there is no reported delay, there are also no savings in time or fuel, which aligns with the efficiency shown.\n\n### Recommendations for Traffic Optimization:\n\n**1. Verification of Data:**\n   - **Reassess Data Collection Methods**: Ensure that traffic sensors, cameras, or other data collection tools are functioning correctly and are calibrated to provide accurate real-time data.\n\n**2. Proactive Measures:**\n   - **Traffic Signal Optimization:** Even if there are no current delays, implementing adaptive traffic signal systems could preemptively manage potential future increases in traffic or sudden congestion due to events or accidents.\n   \n   - **Intersection Improvements:**\n     - Consider geometric changes like adding turning lanes or optimizing the layout to reduce potential future conflicts"
+    },
+    "Tonawanda": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "Niagara Falls Boulevard (US-62) & Sheridan Drive",
+                "delay_minutes": 0.49,
+                "total_vehicles": 6400,
+                "time_savings_usd": 207.61,
+                "fuel_savings_usd": 29.9
+            },
+            {
+                "name": "Delaware Avenue (NY-384) & Sheridan Drive",
+                "delay_minutes": 0.49,
+                "total_vehicles": 6400,
+                "time_savings_usd": 207.61,
+                "fuel_savings_usd": 29.9
+            },
+            {
+                "name": "Young Street & Colvin Boulevard",
+                "delay_minutes": 0.49,
+                "total_vehicles": 6400,
+                "time_savings_usd": 207.61,
+                "fuel_savings_usd": 29.9
+            },
+            {
+                "name": "Niagara Falls Boulevard & Ellicott Creek Road",
+                "delay_minutes": 0.49,
+                "total_vehicles": 6400,
+                "time_savings_usd": 207.61,
+                "fuel_savings_usd": 29.9
+            },
+            {
+                "name": "Kenmore Avenue & Military Road",
+                "delay_minutes": 0.18,
+                "total_vehicles": 6400,
+                "time_savings_usd": 77.85,
+                "fuel_savings_usd": 11.21
+            }
+        ],
+        "total_time_savings": 908.2752000000002,
+        "total_fuel_savings": 130.79162880000004,
+        "xai_analysis": "To analyze the traffic data for congestion trends in Tonawanda and provide recommendations for traffic optimization, here's a step-by-step breakdown:\n\n### Analysis:\n\n1. **Uniform Delay Across Intersections**: \n   - Four out of five intersections show the same delay of 0.49 minutes per vehicle, which indicates a pattern of similar congestion issues across these locations. This might suggest:\n     - A common underlying issue like synchronized traffic light timings that are not optimal.\n     - Similar traffic flow issues due to road design or volume of traffic.\n\n2. **Traffic Volume Consistency**:\n   - All intersections report an equal number of vehicles (6400), which might not be realistic unless there's a data entry error or if these counts are normalized or averaged for the week. If accurate, this could imply:\n     - Traffic is evenly distributed or there's a significant rerouting happening which maintains a consistent vehicle count.\n\n3. **Economic and Environmental Impact**:\n   - Each of the four intersections with higher delay times results in identical time and fuel savings potential. This similarity suggests:\n     - A standardized calculation for potential savings might be applied, or these intersections experience identical congestion levels.\n\n4. **Outlier Intersection**:\n   - **Kenmore Avenue & Military Road** shows a significantly lower delay (0.18 min/vehicle) and consequently lower time and fuel savings. This could indicate:\n     - Better traffic management or less congestion due to road design, traffic light optimization, or lower traffic volume.\n\n"
+    },
+    "West Seneca": {
+        "timeframe": "past_week",
+        "intersections": [
+            {
+                "name": "Union Road (NY-277) & Seneca Street (NY-16)",
+                "delay_minutes": 0.12,
+                "total_vehicles": 6400,
+                "time_savings_usd": 51.9,
+                "fuel_savings_usd": 7.47
+            },
+            {
+                "name": "Transit Road (NY-78) & Clinton Street",
+                "delay_minutes": 0.12,
+                "total_vehicles": 6400,
+                "time_savings_usd": 51.9,
+                "fuel_savings_usd": 7.47
+            },
+            {
+                "name": "Ridge Road & Orchard Park Road",
+                "delay_minutes": 0.12,
+                "total_vehicles": 6400,
+                "time_savings_usd": 51.9,
+                "fuel_savings_usd": 7.47
+            },
+            {
+                "name": "Seneca Street & Harlem Road",
+                "delay_minutes": 0.49,
+                "total_vehicles": 6400,
+                "time_savings_usd": 207.61,
+                "fuel_savings_usd": 29.9
+            },
+            {
+                "name": "Union Road & Center Road",
+                "delay_minutes": 0.12,
+                "total_vehicles": 6400,
+                "time_savings_usd": 51.9,
+                "fuel_savings_usd": 7.47
+            }
+        ],
+        "total_time_savings": 415.21152000000006,
+        "total_fuel_savings": 59.79045888000002,
+        "xai_analysis": "Here's an analysis of the traffic data provided for West Seneca, along with recommendations for optimizing traffic flow:\n\n### Analysis:\n\n1. **Consistent Traffic Volumes and Delays:**\n   - Most intersections show the same number of vehicles (6400) and identical delay times (0.12 minutes per vehicle) except for **Seneca Street & Harlem Road** which has a significantly higher delay (0.49 minutes per vehicle). This indicates:\n     - A possible data collection or entry error for the other intersections, or \n     - An actual anomaly at Seneca Street & Harlem Road due to specific traffic issues or conditions not reflected in the other data points.\n\n2. **Time and Fuel Savings:**\n   - The savings at Seneca Street & Harlem Road are almost four times higher than at other intersections, which correlates with the higher delay time. This suggests that this intersection experiences much more congestion.\n\n3. **Intersection Performance:**\n   - **Seneca Street & Harlem Road** stands out due to its significantly higher delay, suggesting it's a critical point of congestion.\n\n### Recommendations for Traffic Optimization:\n\n1. **Detailed Study at Seneca Street & Harlem Road:**\n   - **Conduct a Traffic Impact Study:** A more in-depth analysis using real-time traffic data collection methods like cameras or sensors to understand the causes of congestion. Look into factors like:\n     - Signal timing and phasing\n     - Pedestrian crossing frequency\n     - Public transport stops or load/unload zones\n     - Turning movements"
+    }
+}
