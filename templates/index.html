@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Traffic Optimization</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .town { margin-bottom: 20px; }
+        .filter-btn { margin: 5px; padding: 5px 10px; cursor: pointer; }
+        .details { display: none; margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>AI Traffic Optimization Dashboard</h1>
+    <div id="filter-buttons">
+        {% for filter in filters %}
+            <button class="filter-btn" data-filter="{{ filter }}">{{ filter.replace('_', ' ').title() }}</button>
+        {% endfor %}
+    </div>
+    <div id="towns">
+        {% for town_name, town_data in towns.items() %}
+            <div class="town">
+                <h2>{{ town_name }}</h2>
+                <button onclick="toggleDetails('{{ town_name }}')">Show Details</button>
+                <div id="{{ town_name }}-details" class="details">
+                    <p><strong>Intersections:</strong></p>
+                    <ul id="{{ town_name }}-intersections"></ul>
+                    <p><strong>Total Time Savings:</strong> $0.00</p>
+                    <p><strong>Total Fuel Savings:</strong> $0.00</p>
+                    <p><strong>xAI Analysis:</strong> <span id="{{ town_name }}-analysis"></span></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        function toggleDetails(town) {
+            const details = document.getElementById(town + '-details');
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+            if (details.style.display === 'block') {
+                fetchData(town);
+            }
+        }
+
+        function fetchData(town) {
+            const filter = $('.filter-btn.active').data('filter') || 'past_day';
+            $.getJSON(`/data?town=${town}&filter=${filter}`, function(data) {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                const intersections = $('#' + town + '-intersections');
+                intersections.empty();
+                data.intersections.forEach(intersection => {
+                    intersections.append(
+                        `<li>${intersection.name}: Delay ${intersection.delay_minutes} min/vehicle, Vehicles ${intersection.total_vehicles}, Time Savings $${intersection.time_savings_usd}, Fuel Savings $${intersection.fuel_savings_usd}</li>`
+                    );
+                });
+                $('#' + town + '-details').find('p:nth-child(3)').text(`Total Time Savings: $${data.total_time_savings.toFixed(2)}`);
+                $('#' + town + '-details').find('p:nth-child(4)').text(`Total Fuel Savings: $${data.total_fuel_savings.toFixed(2)}`);
+                $('#' + town + '-analysis').text(data.xai_analysis);
+            });
+        }
+
+        $('.filter-btn').on('click', function() {
+            $('.filter-btn').removeClass('active');
+            $(this).addClass('active');
+            const filter = $(this).data('filter');
+            // Trigger analysis for the selected filter
+            $.ajax({
+                url: '/analyze',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ filter: filter }),
+                success: function(response) {
+                    console.log(response);
+                    $('.town').each(function() {
+                        if ($(this).find('.details').css('display') === 'block') {
+                            fetchData($(this).find('h2').text());
+                        }
+                    });
+                },
+                error: function(error) {
+                    console.error('Error triggering analysis:', error);
+                }
+            });
+        });
+
+        // Activate the first filter button by default
+        $('.filter-btn:first').addClass('active');
+    </script>
+</body>
+</html>
