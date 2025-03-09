@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 from flask import Flask, jsonify, render_template
 import os
 import logging
+import time
+from functools import lru_cache
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -154,14 +156,11 @@ def fetch_here_traffic_data(timeframe: str, lat: float, lon: float) -> Tuple[flo
         logger.error(f"Error fetching HERE traffic data: {e}")
         return 2.0, 8000
 
-def analyze_with_xai(town: str, traffic_data: Dict) -> str:
-    """Analyze traffic data using xAI API."""
-    if not traffic_data or not traffic_data["intersections"]:
+@lru_cache(maxsize=128)
+def analyze_with_xai(town: str, timeframe: str, data_str: str) -> str:
+    """Analyze traffic data using xAI API with retry logic and caching."""
+    if not data_str:
         return "No traffic data available for analysis."
-
-    data_str = f"Traffic Data for {town} (Timeframe: {traffic_data['timeframe']}):\n"
-    for item in traffic_data["intersections"]:
-        data_str += f"- Intersection: {item['name']}, Delay: {item['delay_minutes']} min/vehicle, Vehicles: {item['total_vehicles']}, Time Savings: ${item['time_savings_usd']}, Fuel Savings: ${item['fuel_savings_usd']}\n"
 
     prompt = f"Analyze the following traffic data for congestion trends and provide recommendations for traffic optimization:\n{data_str}"
     
@@ -172,20 +171,37 @@ def analyze_with_xai(town: str, traffic_data: Dict) -> str:
         "temperature": 0.7
     }
     
-    try:
-        response = requests.post(XAI_API_URL, headers=XAI_HEADERS, data=json.dumps(payload), timeout=10)
-        response.raise_for_status()
-        result = response.json()
-        
-        if "choices" in result and result["choices"]:
-            analysis = result["choices"][0]["message"]["content"]
-            return analysis
-        else:
-            logger.warning("No analysis returned from xAI API.")
-            return "Unable to generate analysis."
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Error calling xAI API: {e}")
-        return f"Error analyzing data: {str(e)}"
+    max_retries = 3
+    retry_delay = 10  # Initial delay in seconds (increases with each retry)
+
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(XAI_API_URL, headers=XAI_HEADERS, data=json.dumps(payload), timeout=10)
+            if response.status_code == 429:
+                logger.warning(f"Rate limit hit on attempt {attempt + 1}/{max_retries}. Retrying after {retry_delay} seconds.")
+                time.sleep(retry_delay)
+                retry_delay *= 2  # Exponential backoff
+                continue
+            response.raise_for_status()
+            result = response.json()
+            
+            if "choices" in result and result["choices"]:
+                analysis = result["choices"][0]["message"]["content"]
+                # Add a small delay to avoid hitting rate limits in subsequent calls
+                time.sleep(1)
+                return analysis
+            else:
+                logger.warning("No analysis returned from xAI API.")
+                return "Unable to generate analysis."
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Error calling xAI API: {e}")
+            if attempt == max_retries - 1:
+                return f"Error analyzing data: {str(e)}"
+            logger.warning(f"Retrying after {retry_delay} seconds...")
+            time.sleep(retry_delay)
+            retry_delay *= 2  # Exponential backoff
+
+    return "Failed to analyze data after multiple retries due to rate limits."
 
 def calculate_savings_per_intersection(intersection: str, period: str, lat: float, lon: float) -> Tuple[float, float, float, int]:
     """Calculate savings using HERE traffic data."""
@@ -237,8 +253,13 @@ def analyze_towns(towns_data: Dict[str, Dict[str, any]], time_filter: str) -> Di
                 logger.error(f"Error processing intersection {intersection}: {e}")
                 continue
         
-        # Analyze the town data with xAI
-        town_results["xai_analysis"] = analyze_with_xai(town, town_results)
+        # Prepare data string for xAI analysis
+        data_str = f"Traffic Data for {town} (Timeframe: {time_filter}):\n"
+        for item in town_results["intersections"]:
+            data_str += f"- Intersection: {item['name']}, Delay: {item['delay_minutes']} min/vehicle, Vehicles: {item['total_vehicles']}, Time Savings: ${item['time_savings_usd']}, Fuel Savings: ${item['fuel_savings_usd']}\n"
+
+        # Analyze with xAI
+        town_results["xai_analysis"] = analyze_with_xai(town, time_filter, data_str)
         results[town] = town_results
     return results
 
